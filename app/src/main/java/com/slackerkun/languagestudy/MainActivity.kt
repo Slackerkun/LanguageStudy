@@ -3,27 +3,34 @@ package com.slackerkun.languagestudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.*
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
+import com.slackerkun.languagestudy.ui.theme.LanguageStudyTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val situations = remember { RemoteDataSource.fetchSituations(this) }
-            SituationalJapaneseUI(situations)
+            LanguageStudyTheme {
+                val situations = remember { RemoteDataSource.fetchSituations(this) }
+                SituationalJapaneseUI(situations)
+            }
         }
     }
 }
@@ -32,6 +39,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SituationalJapaneseUI(situations: List<Situation>) {
     var selectedTabIndex by remember { mutableStateOf(0) }
+    var showJapaneseFirst by remember { mutableStateOf(true) }
 
     Scaffold(
         topBar = {
@@ -45,6 +53,18 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                             "Situational Japanese",
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold
+                        )
+                    }
+                },
+                actions = {
+                    // Global JP/EN toggle
+                    IconButton(onClick = { showJapaneseFirst = !showJapaneseFirst }) {
+                        val iconText = if (showJapaneseFirst) "JP" else "EN"
+                        Text(
+                            text = iconText,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -95,7 +115,10 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                         verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         items(current.phrases) { phrase ->
-                            PhraseCard(phrase = phrase)
+                            PhraseCard(
+                                phrase = phrase,
+                                defaultShowJapaneseFirst = showJapaneseFirst
+                            )
                         }
                     }
                 }
@@ -134,34 +157,87 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
 }
 
 @Composable
-fun PhraseCard(phrase: Phrase) {
-    Card(
+fun PhraseCard(
+    phrase: Phrase,
+    defaultShowJapaneseFirst: Boolean
+) {
+    var flipped by remember { mutableStateOf(!defaultShowJapaneseFirst) }
+    var rotation by remember { mutableStateOf(0f) }
+
+    // Smooth rotation animation
+    val animatedRotation by animateFloatAsState(
+        targetValue = rotation,
+        animationSpec = tween(durationMillis = 350),
+        label = "flipAnim"
+    )
+
+    // Tap to flip
+    fun flipCard() {
+        flipped = !flipped
+        rotation += 180f
+    }
+
+    Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        shape = RoundedCornerShape(14.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
-        )
+            .clickable { flipCard() }
+            .padding(vertical = 4.dp)
+            .graphicsLayer {
+                cameraDistance = 12 * density
+            }
     ) {
-        Column(Modifier.padding(16.dp)) {
-            Text(
-                text = phrase.jp,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = phrase.romaji,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.primary
-            )
-            Spacer(modifier = Modifier.height(6.dp))
-            Text(
-                text = phrase.en,
-                style = MaterialTheme.typography.bodyMedium
-            )
+        // Front Side (Japanese)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .graphicsLayer {
+                    rotationY = animatedRotation
+                    alpha = if (animatedRotation <= 90f || animatedRotation >= 270f) 1f else 0f
+                },
+            shape = RoundedCornerShape(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            Column(Modifier.padding(16.dp)) {
+                Text(
+                    text = phrase.jp,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = phrase.romaji,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+        }
+
+        // Back Side (English)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .graphicsLayer {
+                    rotationY = animatedRotation + 180f
+                    alpha = if (animatedRotation > 90f && animatedRotation < 270f) 1f else 0f
+                },
+            shape = RoundedCornerShape(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            Column(Modifier.padding(16.dp)) {
+                Text(
+                    text = phrase.en,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = phrase.jp,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
         }
     }
 }
