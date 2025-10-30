@@ -1,0 +1,19 @@
+[
+  {
+    "id": "izakaya",
+    "title": "いざかや",
+    "phrases": [
+      { "jp": "いらっしゃいませ", "romaji": "irasshaimase", "en": "welcome (staff)" },
+      { "jp": "よやくしていません", "romaji": "yoyaku shiteimasen", "en": "I don’t have a reservation" },
+      { "jp": "おかいけいおねがいします", "romaji": "okaikei onegaishimasu", "en": "check, please" }
+    ]
+  },
+  {
+    "id": "intro",
+    "title": "じこしょうかい",
+    "phrases": [
+      { "jp": "はじめまして", "romaji": "hajimemashite", "en": "nice to meet you" },
+      { "jp": "○○です", "romaji": "___ desu", "en": "I’m ___" }
+    ]
+  }
+]
