@@ -9,6 +9,11 @@
         "en": "Nice to meet you"
       },
       {
+        "jp": "XXXX",
+        "romaji": "XXXX",
+        "en": "XXXX"
+      },
+      {
         "jp": "○○です",
         "romaji": "___ desu",
         "en": "I’m ___"
@@ -26,7 +31,7 @@
     ]
   },
   {
-    "id": "Phrases",
+    "id": "phrases",
     "title": "Phrases",
     "phrases": [
       {

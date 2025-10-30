@@ -8,7 +8,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -29,16 +28,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SituationalJapaneseUI(situations: List<Situation>) {
     var selectedTabIndex by remember { mutableStateOf(0) }
-    var expandedPhrase by remember { mutableStateOf<SituationalPhrase?>(null) }
-
-    // existing toggle: which side to show first
-    var showJapaneseFirst by remember { mutableStateOf(true) }
-    // NEW: show/hide notes
-    var showNotes by remember { mutableStateOf(true) }
 
     Scaffold(
         topBar = {
@@ -77,46 +70,7 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.15f))
             ) {
-                // Row of controls (language + notes)
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    // language chips
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        FilterChip(
-                            selected = showJapaneseFirst,
-                            onClick = { showJapaneseFirst = true },
-                            label = { Text("Japanese → English") }
-                        )
-                        FilterChip(
-                            selected = !showJapaneseFirst,
-                            onClick = { showJapaneseFirst = false },
-                            label = { Text("English → Japanese") }
-                        )
-                    }
-
-                    // notes toggle
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
-                    ) {
-                        Text("Notes", style = MaterialTheme.typography.bodySmall)
-                        Switch(
-                            checked = showNotes,
-                            onCheckedChange = { showNotes = it },
-                            modifier = Modifier.height(24.dp)
-                        )
-                    }
-                }
-
-                // Tabs
+                // Tabs for each category
                 TabRow(
                     selectedTabIndex = selectedTabIndex,
                     containerColor = MaterialTheme.colorScheme.surface,
@@ -125,10 +79,7 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                     situations.forEachIndexed { index, situation ->
                         Tab(
                             selected = selectedTabIndex == index,
-                            onClick = {
-                                selectedTabIndex = index
-                                expandedPhrase = null
-                            },
+                            onClick = { selectedTabIndex = index },
                             text = { Text(situation.title) }
                         )
                     }
@@ -144,16 +95,7 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                         verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         items(current.phrases) { phrase ->
-                            PhraseCard(
-                                phrase = phrase,
-                                isExpanded = expandedPhrase == phrase,
-                                onClick = {
-                                    expandedPhrase =
-                                        if (expandedPhrase == phrase) null else phrase
-                                },
-                                showJapaneseFirst = showJapaneseFirst,
-                                showNotes = showNotes
-                            )
+                            PhraseCard(phrase = phrase)
                         }
                     }
                 }
@@ -192,17 +134,11 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
 }
 
 @Composable
-fun PhraseCard(
-    phrase: SituationalPhrase,
-    isExpanded: Boolean,
-    onClick: () -> Unit,
-    showJapaneseFirst: Boolean,
-    showNotes: Boolean
-) {
+fun PhraseCard(phrase: Phrase) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { onClick() },
+            .padding(vertical = 4.dp),
         shape = RoundedCornerShape(14.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         colors = CardDefaults.cardColors(
@@ -210,70 +146,22 @@ fun PhraseCard(
         )
     ) {
         Column(Modifier.padding(16.dp)) {
-
-            if (showJapaneseFirst) {
-                // Japanese → English
-                Text(
-                    text = phrase.jp,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = phrase.romaji,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary
-                )
-                if (isExpanded) {
-                    Spacer(Modifier.height(6.dp))
-                    Text(phrase.en, style = MaterialTheme.typography.bodyMedium)
-                } else {
-                    Spacer(Modifier.height(4.dp))
-                    Text(
-                        "Tap to show English",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.outline
-                    )
-                }
-            } else {
-                // English → Japanese
-                Text(
-                    text = phrase.en,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = phrase.jp,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary
-                )
-                if (isExpanded) {
-                    Spacer(Modifier.height(6.dp))
-                    Text(
-                        phrase.romaji,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.secondary
-                    )
-                } else {
-                    Spacer(Modifier.height(4.dp))
-                    Text(
-                        "Tap to show romaji",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.outline
-                    )
-                }
-            }
-
-            // show note only if toggle ON and note exists
-            if (showNotes) {
-                phrase.note?.let {
-                    Spacer(Modifier.height(6.dp))
-                    Text(
-                        it,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-            }
+            Text(
+                text = phrase.jp,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = phrase.romaji,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text = phrase.en,
+                style = MaterialTheme.typography.bodyMedium
+            )
         }
     }
 }
