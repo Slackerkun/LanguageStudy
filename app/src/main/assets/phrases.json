@@ -26,8 +26,8 @@
     ]
   },
   {
-    "id": "phrases",
-    "title": "Phrases",
+    "id": "common_phrases",
+    "title": "Common Phrases",
     "phrases": [
       {
         "jp": "ありがとうございます",
