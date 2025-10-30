@@ -1,28 +1,7 @@
 [
   {
-    "id": "izakaya",
-    "title": "Izakaya / Restaurant",
-    "phrases": [
-      {
-        "jp": "いらっしゃいませ",
-        "romaji": "irasshaimase",
-        "en": "welcome (staff)"
-      },
-      {
-        "jp": "よやくしていません",
-        "romaji": "yoyaku shiteimasen",
-        "en": "I don’t have a reservation"
-      },
-      {
-        "jp": "おかいけいおねがいします",
-        "romaji": "okaikei onegaishimasu",
-        "en": "Check, please."
-      }
-    ]
-  },
-  {
     "id": "intro",
-    "title": "Introductions",
+    "title": "Intro",
     "phrases": [
       {
         "jp": "はじめまして",
@@ -42,7 +21,69 @@
       {
         "jp": "いまブタコです。だからじぶんのアプリをつくりました。",
         "romaji": "Ima Butako desu. Dakara jibun no apuri o tsukurimashita.",
-        "en": "I am Butako right now, so I made my own application."
+        "en": "I am Butako right now so I made my own application."
+      }
+    ]
+  },
+  {
+    "id": "phrases",
+    "title": "Phrases",
+    "phrases": [
+      {
+        "jp": "ありがとうございます",
+        "romaji": "arigatou gozaimasu",
+        "en": "Thank you"
+      },
+      {
+        "jp": "すみません",
+        "romaji": "sumimasen",
+        "en": "Excuse me / I’m sorry"
+      },
+      {
+        "jp": "もういちどおねがいします",
+        "romaji": "mou ichido onegaishimasu",
+        "en": "One more time please"
+      },
+      {
+        "jp": "ゆっくりはなしてもらえますか",
+        "romaji": "yukkuri hanashite moraemasu ka",
+        "en": "Could you speak slowly?"
+      },
+      {
+        "jp": "わかりました",
+        "romaji": "wakarimashita",
+        "en": "Got it / I understand"
+      },
+      {
+        "jp": "わかりません",
+        "romaji": "wakarimasen",
+        "en": "I don’t understand"
+      },
+      {
+        "jp": "だいじょうぶです",
+        "romaji": "daijoubu desu",
+        "en": "It’s okay / I’m fine"
+      }
+    ]
+  },
+  {
+    "id": "restaurant",
+    "title": "Restaurant",
+    "phrases": [
+      {
+        "jp": "いらっしゃいませ",
+        "romaji": "irasshaimase",
+        "en": "welcome (staff)"
+      },
+      {
+        "jp": "よやくしていません",
+        "romaji": "yoyaku shiteimasen",
+        "en": "I don’t have a reservation"
+      },
+      {
+        "jp": "おかいけいおねがいします",
+        "romaji": "okaikei onegaishimasu",
+        "en": "Check Please"
       }
     ]
   }
