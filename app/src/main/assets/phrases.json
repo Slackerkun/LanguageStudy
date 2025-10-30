@@ -1,7 +1,7 @@
 [
   {
-    "id": "izakaya",
-    "title": "いざかや",
+    "id": "Restaurant",
+    "title": "Restaurant",
     "phrases": [
       { "jp": "いらっしゃいませ", "romaji": "irasshaimase", "en": "welcome (staff)" },
       { "jp": "よやくしていません", "romaji": "yoyaku shiteimasen", "en": "I don’t have a reservation" },
@@ -10,10 +10,12 @@
   },
   {
     "id": "intro",
-    "title": "じこしょうかい",
+    "title": "Intro",
     "phrases": [
-      { "jp": "はじめまして", "romaji": "hajimemashite", "en": "nice to meet you" },
-      { "jp": "○○です", "romaji": "___ desu", "en": "I’m ___" }
+      { "jp": "はじめまして", "romaji": "Hajimemashite", "en": "Nice to meet you" },
+      { "jp": "○○です", "romaji": "___ desu", "en": "I’m ___" },
+      { "jp": "アメリカからきました", "romaji": "Amerika kara kimashita", "en": "I’m from the U.S." },
+      { "jp": "いまブタコです。だからじぶんのアプリをつくりました。", "romaji": "Ima Butako desu. Dakara jibun no apuri o tsukurimashita.", "en": "I am Butako right now, so I made my own application." }
     ]
   }
-]
+
