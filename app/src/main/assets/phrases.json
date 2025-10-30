@@ -32,6 +32,11 @@
         "jp": "Testing",
         "romaji": "Testing",
         "en": "Testing"
+      },
+      {
+        "jp": "Testing2",
+        "romaji": "Testing2",
+        "en": "Testing2"
       }
     ]
   },

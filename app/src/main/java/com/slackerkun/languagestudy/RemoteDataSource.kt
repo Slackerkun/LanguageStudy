@@ -8,7 +8,6 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-// This is the shape MainActivity expects
 data class RemoteResult(
     val data: List<Situation>,
     val status: RemoteStatus
@@ -16,20 +15,25 @@ data class RemoteResult(
 
 object RemoteDataSource {
 
-    // GitHub raw JSON (must stay public)
-    private const val REMOTE_URL =
+    // base URL to your GitHub raw file (no query here)
+    private const val BASE_REMOTE_URL =
         "https://raw.githubusercontent.com/Slackerkun/LanguageStudy/main/app/src/main/assets/phrases.json"
 
     fun fetchSituations(context: Context): RemoteResult {
-        // 1) try remote
+        // add a cache-buster so GitHub can’t hand us an old copy
+        val fullUrl = "$BASE_REMOTE_URL?ts=${System.currentTimeMillis()}"
+
         return try {
-            val connection = URL(REMOTE_URL).openConnection() as HttpURLConnection
+            val connection = URL(fullUrl).openConnection() as HttpURLConnection
             connection.connectTimeout = 5000
             connection.readTimeout = 5000
             connection.requestMethod = "GET"
+            connection.setRequestProperty("Cache-Control", "no-cache")
             connection.connect()
 
-            if (connection.responseCode == 200) {
+            val code = connection.responseCode
+
+            if (code == 200) {
                 val reader = BufferedReader(InputStreamReader(connection.inputStream))
                 val json = reader.readText()
                 reader.close()
@@ -47,23 +51,22 @@ object RemoteDataSource {
                     )
                 )
             } else {
-                // non-200 → fallback to assets
+                // non-200 → fall back to assets
                 val local = AssetsDataSource.loadSituations(context)
                 RemoteResult(
                     data = local,
                     status = RemoteStatus(
-                        source = "Local (HTTP ${connection.responseCode})",
+                        source = "Local (HTTP $code)",
                         ok = false,
-                        code = connection.responseCode
+                        code = code
                     )
                 )
             }
         } catch (e: Exception) {
             e.printStackTrace()
 
-            // 2) remote failed hard → fallback to assets
+            // network/parse/etc → fall back to assets
             val local = AssetsDataSource.loadSituations(context)
-
             RemoteResult(
                 data = local,
                 status = RemoteStatus(
