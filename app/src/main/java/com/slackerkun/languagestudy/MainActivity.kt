@@ -3,8 +3,9 @@ package com.slackerkun.languagestudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -15,12 +16,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import com.slackerkun.languagestudy.ui.theme.LanguageStudyTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,32 +44,51 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    Box(
-                        modifier = Modifier.fillMaxWidth(),
-                        contentAlignment = Alignment.Center
+            // Gradient Header wrapped in Surface (for elevation)
+            Surface(
+                tonalElevation = 6.dp,
+                shadowElevation = 6.dp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(
+                        Brush.horizontalGradient(
+                            listOf(
+                                MaterialTheme.colorScheme.primary,
+                                MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
+                                MaterialTheme.colorScheme.secondary
+                            )
+                        )
+                    )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 14.dp, horizontal = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = "🎌 Situational Japanese",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = Color.White,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
+
+                    TextButton(
+                        onClick = { showJapaneseFirst = !showJapaneseFirst },
+                        colors = ButtonDefaults.textButtonColors(
+                            contentColor = Color.White.copy(alpha = 0.95f)
+                        )
                     ) {
                         Text(
-                            "Situational Japanese",
-                            style = MaterialTheme.typography.titleLarge,
+                            text = if (showJapaneseFirst) "JP" else "EN",
+                            fontSize = 16.sp,
                             fontWeight = FontWeight.Bold
                         )
                     }
-                },
-                actions = {
-                    // Global JP/EN toggle
-                    IconButton(onClick = { showJapaneseFirst = !showJapaneseFirst }) {
-                        val iconText = if (showJapaneseFirst) "JP" else "EN"
-                        Text(
-                            text = iconText,
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
                 }
-            )
+            }
         }
     ) { padding ->
         if (situations.isEmpty()) {
@@ -88,19 +108,27 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                 modifier = Modifier
                     .padding(padding)
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.15f))
+                    .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.1f))
             ) {
-                // Tabs for each category
-                TabRow(
+                // Tabs
+                ScrollableTabRow(
                     selectedTabIndex = selectedTabIndex,
                     containerColor = MaterialTheme.colorScheme.surface,
-                    contentColor = MaterialTheme.colorScheme.primary
+                    contentColor = MaterialTheme.colorScheme.primary,
+                    edgePadding = 8.dp,
+                    divider = {}
                 ) {
                     situations.forEachIndexed { index, situation ->
                         Tab(
                             selected = selectedTabIndex == index,
                             onClick = { selectedTabIndex = index },
-                            text = { Text(situation.title) }
+                            text = {
+                                Text(
+                                    situation.title,
+                                    fontWeight = if (selectedTabIndex == index)
+                                        FontWeight.Bold else FontWeight.Normal
+                                )
+                            }
                         )
                     }
                 }
@@ -123,35 +151,49 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                     }
                 }
 
-                // Footer banner
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 10.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(999.dp))
-                            .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.85f))
-                            .padding(horizontal = 14.dp, vertical = 6.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .size(8.dp)
-                                .clip(CircleShape)
-                                .background(MaterialTheme.colorScheme.primary)
-                        )
-                        Text(
-                            text = "Created by David Lambrix",
-                            fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                }
+                FooterBar()
             }
+        }
+    }
+}
+
+@Composable
+fun FooterBar() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                Brush.verticalGradient(
+                    listOf(
+                        MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.8f),
+                        MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)
+                    )
+                )
+            )
+            .padding(vertical = 8.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(8.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.primary)
+            )
+            Text(
+                text = "Created by David Lambrix",
+                fontSize = 13.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                fontWeight = FontWeight.Medium
+            )
+            Text(
+                text = "• v1.0",   // ← hardcoded for now
+                fontSize = 12.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+            )
         }
     }
 }
@@ -161,20 +203,19 @@ fun PhraseCard(
     phrase: Phrase,
     defaultShowJapaneseFirst: Boolean
 ) {
-    var flipped by remember { mutableStateOf(!defaultShowJapaneseFirst) }
-    var rotation by remember { mutableStateOf(0f) }
+    // start rotated depending on global toggle
+    var baseRotation by remember {
+        mutableStateOf(if (defaultShowJapaneseFirst) 0f else 180f)
+    }
 
-    // Smooth rotation animation
     val animatedRotation by animateFloatAsState(
-        targetValue = rotation,
-        animationSpec = tween(durationMillis = 350),
-        label = "flipAnim"
+        targetValue = baseRotation,
+        animationSpec = tween(durationMillis = 300),
+        label = "phraseFlip"
     )
 
-    // Tap to flip
     fun flipCard() {
-        flipped = !flipped
-        rotation += 180f
+        baseRotation += 180f
     }
 
     Box(
@@ -186,13 +227,15 @@ fun PhraseCard(
                 cameraDistance = 12 * density
             }
     ) {
-        // Front Side (Japanese)
+        val rotation = animatedRotation % 360f
+
+        // Front = Japanese
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .graphicsLayer {
-                    rotationY = animatedRotation
-                    alpha = if (animatedRotation <= 90f || animatedRotation >= 270f) 1f else 0f
+                    rotationY = rotation
+                    alpha = if (rotation <= 90f || rotation >= 270f) 1f else 0f
                 },
             shape = RoundedCornerShape(16.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
@@ -213,13 +256,13 @@ fun PhraseCard(
             }
         }
 
-        // Back Side (English)
+        // Back = English
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .graphicsLayer {
-                    rotationY = animatedRotation + 180f
-                    alpha = if (animatedRotation > 90f && animatedRotation < 270f) 1f else 0f
+                    rotationY = rotation + 180f
+                    alpha = if (rotation > 90f && rotation < 270f) 1f else 0f
                 },
             shape = RoundedCornerShape(16.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
@@ -241,3 +284,4 @@ fun PhraseCard(
         }
     }
 }
+4

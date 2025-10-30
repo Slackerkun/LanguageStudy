@@ -4,14 +4,14 @@
     "title": "Intro",
     "phrases": [
       {
-        "jp": "はじめまして",
-        "romaji": "hajimemashite",
-        "en": "Nice to meet you"
-      },
-      {
         "jp": "Masae",
         "romaji": "Masae",
         "en": "Masae"
+      },
+      {
+        "jp": "はじめまして",
+        "romaji": "hajimemashite",
+        "en": "Nice to meet you"
       },
       {
         "jp": "○○です",
@@ -34,6 +34,11 @@
     "id": "phrases",
     "title": "Phrases",
     "phrases": [
+      {
+        "jp": "つかささん、みんなといっしょにとてもたのしかったです！まねいてくれてありがとう！",
+        "romaji": "Tsukasa-san, minna to issho ni totemo tanoshikatta desu! Maneite kurete arigatou!",
+        "en": "Tsukasa, I had a great time with you guys! Thank you for hosting me!"
+      },
       {
         "jp": "ありがとうございます",
         "romaji": "arigatou gozaimasu",
