@@ -2,21 +2,28 @@ package com.slackerkun.languagestudy
 
 import android.content.Context
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.google.gson.JsonSyntaxException
+import java.io.IOException
 
 object AssetsDataSource {
 
-    private const val FILE_NAME = "phrases.json"
+    private const val ASSET_FILE = "phrases.json"
 
     fun loadSituations(context: Context): List<Situation> {
         return try {
-            // read the JSON text from /assets/phrases.json
-            val json = context.assets.open(FILE_NAME).bufferedReader().use { it.readText() }
+            val input = context.assets.open(ASSET_FILE)
+            val json = input.bufferedReader().use { it.readText() }
 
-            // tell Gson what type we want (List<Situation>)
-            val type = object : TypeToken<List<Situation>>() {}.type
+            val gson = Gson()
+            val arr = gson.fromJson(json, Array<Situation>::class.java)
 
-            Gson().fromJson<List<Situation>>(json, type)
+            arr?.toList() ?: emptyList()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            emptyList()
+        } catch (e: JsonSyntaxException) {
+            e.printStackTrace()
+            emptyList()
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()

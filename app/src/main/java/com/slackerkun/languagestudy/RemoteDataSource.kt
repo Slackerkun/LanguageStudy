@@ -1,23 +1,27 @@
 package com.slackerkun.languagestudy
 
 import android.content.Context
-import android.widget.Toast
-import android.util.Log
 import com.google.gson.Gson
-import java.net.HttpURLConnection
-import java.net.URL
+import com.google.gson.JsonSyntaxException
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.URL
+
+// This is the shape MainActivity expects
+data class RemoteResult(
+    val data: List<Situation>,
+    val status: RemoteStatus
+)
 
 object RemoteDataSource {
 
-    private const val TAG = "RemoteDataSource"
-
-    // your public raw URL
+    // GitHub raw JSON (must stay public)
     private const val REMOTE_URL =
         "https://raw.githubusercontent.com/Slackerkun/LanguageStudy/main/app/src/main/assets/phrases.json"
 
-    fun fetchSituations(context: Context): List<Situation> {
+    fun fetchSituations(context: Context): RemoteResult {
+        // 1) try remote
         return try {
             val connection = URL(REMOTE_URL).openConnection() as HttpURLConnection
             connection.connectTimeout = 5000
@@ -25,27 +29,49 @@ object RemoteDataSource {
             connection.requestMethod = "GET"
             connection.connect()
 
-            val code = connection.responseCode
-            Log.d(TAG, "HTTP response code: $code")
-
-            if (code == HttpURLConnection.HTTP_OK) {
+            if (connection.responseCode == 200) {
                 val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                val response = reader.readText()
+                val json = reader.readText()
                 reader.close()
 
-                Log.d(TAG, "Loaded JSON from remote, length=${response.length}")
-                Toast.makeText(context, "Loaded from GitHub ✅", Toast.LENGTH_SHORT).show()
+                val gson = Gson()
+                val arr = gson.fromJson(json, Array<Situation>::class.java)
+                val list = arr?.toList() ?: emptyList()
 
-                Gson().fromJson(response, Array<Situation>::class.java).toList()
+                RemoteResult(
+                    data = list,
+                    status = RemoteStatus(
+                        source = "GitHub",
+                        ok = true,
+                        code = 200
+                    )
+                )
             } else {
-                Log.w(TAG, "Remote fetch failed, code=$code, using assets")
-                Toast.makeText(context, "Loaded from local (remote HTTP $code)", Toast.LENGTH_SHORT).show()
-                AssetsDataSource.loadSituations(context)
+                // non-200 → fallback to assets
+                val local = AssetsDataSource.loadSituations(context)
+                RemoteResult(
+                    data = local,
+                    status = RemoteStatus(
+                        source = "Local (HTTP ${connection.responseCode})",
+                        ok = false,
+                        code = connection.responseCode
+                    )
+                )
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Remote fetch error: ${e.message}", e)
-            Toast.makeText(context, "Loaded from local (exception)", Toast.LENGTH_SHORT).show()
-            AssetsDataSource.loadSituations(context)
+            e.printStackTrace()
+
+            // 2) remote failed hard → fallback to assets
+            val local = AssetsDataSource.loadSituations(context)
+
+            RemoteResult(
+                data = local,
+                status = RemoteStatus(
+                    source = "Local by exception",
+                    ok = local.isNotEmpty(),
+                    code = null
+                )
+            )
         }
     }
 }

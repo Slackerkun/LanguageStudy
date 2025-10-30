@@ -27,6 +27,11 @@
         "jp": "いまプー太郎です。だからじぶんのアプリをつくりました。",
         "romaji": "Ima Pu-tarou desu. Dakara jibun no apuri o tsukurimashita.",
         "en": "I am Pu-tarou right now so I made my own application."
+      },
+      {
+        "jp": "Testing",
+        "romaji": "Testing",
+        "en": "Testing"
       }
     ]
   },
