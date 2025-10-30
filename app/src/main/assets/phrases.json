@@ -1,21 +1,49 @@
 [
   {
-    "id": "Restaurant",
-    "title": "Restaurant",
+    "id": "izakaya",
+    "title": "Izakaya / Restaurant",
     "phrases": [
-      { "jp": "いらっしゃいませ", "romaji": "irasshaimase", "en": "welcome (staff)" },
-      { "jp": "よやくしていません", "romaji": "yoyaku shiteimasen", "en": "I don’t have a reservation" },
-      { "jp": "おかいけいおねがいします", "romaji": "okaikei onegaishimasu", "en": "check, please" }
+      {
+        "jp": "いらっしゃいませ",
+        "romaji": "irasshaimase",
+        "en": "welcome (staff)"
+      },
+      {
+        "jp": "よやくしていません",
+        "romaji": "yoyaku shiteimasen",
+        "en": "I don’t have a reservation"
+      },
+      {
+        "jp": "おかいけいおねがいします",
+        "romaji": "okaikei onegaishimasu",
+        "en": "Check, please."
+      }
     ]
   },
   {
     "id": "intro",
-    "title": "Intro",
+    "title": "Introductions",
     "phrases": [
-      { "jp": "はじめまして", "romaji": "Hajimemashite", "en": "Nice to meet you" },
-      { "jp": "○○です", "romaji": "___ desu", "en": "I’m ___" },
-      { "jp": "アメリカからきました", "romaji": "Amerika kara kimashita", "en": "I’m from the U.S." },
-      { "jp": "いまブタコです。だからじぶんのアプリをつくりました。", "romaji": "Ima Butako desu. Dakara jibun no apuri o tsukurimashita.", "en": "I am Butako right now, so I made my own application." }
+      {
+        "jp": "はじめまして",
+        "romaji": "hajimemashite",
+        "en": "Nice to meet you"
+      },
+      {
+        "jp": "○○です",
+        "romaji": "___ desu",
+        "en": "I’m ___"
+      },
+      {
+        "jp": "アメリカからきました",
+        "romaji": "amerika kara kimashita",
+        "en": "I’m from the U.S."
+      },
+      {
+        "jp": "いまブタコです。だからじぶんのアプリをつくりました。",
+        "romaji": "Ima Butako desu. Dakara jibun no apuri o tsukurimashita.",
+        "en": "I am Butako right now, so I made my own application."
+      }
     ]
   }
-
+]
