@@ -4,9 +4,9 @@
     "title": "Intro",
     "phrases": [
       {
-        "jp": "Masae",
-        "romaji": "Masae",
-        "en": "Masae"
+        "jp": "アレンはクローゼットのどうせいあいしゃです。",
+        "romaji": "Aren wa kurōzetto no douseiaisha desu.",
+        "en": "Allen is a closeted homosexual."
       },
       {
         "jp": "はじめまして",
@@ -94,6 +94,130 @@
         "jp": "おかいけいおねがいします",
         "romaji": "okaikei onegaishimasu",
         "en": "Check Please"
+      }
+    ]
+  },
+  {
+    "id": "bar",
+    "title": "Bar",
+    "phrases": [
+      {
+        "jp": "かんぱい！",
+        "romaji": "Kanpai!",
+        "en": "Cheers!"
+      },
+      {
+        "jp": "なにがおすすめですか？",
+        "romaji": "Nani ga osusume desu ka?",
+        "en": "What do you recommend?"
+      },
+      {
+        "jp": "ビールをください",
+        "romaji": "Biiru o kudasai",
+        "en": "A beer, please"
+      },
+      {
+        "jp": "おかわりおねがいします",
+        "romaji": "Okawari onegaishimasu",
+        "en": "Another round, please"
+      },
+      {
+        "jp": "おさけはつよくないです",
+        "romaji": "Osake wa tsuyokunai desu",
+        "en": "I’m not good with alcohol"
+      }
+    ]
+  },
+  {
+    "id": "store",
+    "title": "Store",
+    "phrases": [
+      {
+        "jp": "これをください",
+        "romaji": "Kore o kudasai",
+        "en": "I’ll take this one"
+      },
+      {
+        "jp": "いくらですか？",
+        "romaji": "Ikura desu ka?",
+        "en": "How much is it?"
+      },
+      {
+        "jp": "カードつかえますか？",
+        "romaji": "Kaado tsukaemasu ka?",
+        "en": "Can I use a card?"
+      },
+      {
+        "jp": "レシートください",
+        "romaji": "Reshīto kudasai",
+        "en": "Receipt, please"
+      },
+      {
+        "jp": "べつのサイズありますか？",
+        "romaji": "Betsu no saizu arimasu ka?",
+        "en": "Do you have another size?"
+      }
+    ]
+  },
+  {
+    "id": "transportation",
+    "title": "Transportation",
+    "phrases": [
+      {
+        "jp": "このでんしゃはしんじゅくにいきますか？",
+        "romaji": "Kono densha wa Shinjuku ni ikimasu ka?",
+        "en": "Does this train go to Shinjuku?"
+      },
+      {
+        "jp": "きっぷをかいたいです",
+        "romaji": "Kippu o kaitai desu",
+        "en": "I’d like to buy a ticket"
+      },
+      {
+        "jp": "どのせんですか？",
+        "romaji": "Dono sen desu ka?",
+        "en": "Which line is it?"
+      },
+      {
+        "jp": "つぎのえきはなんですか？",
+        "romaji": "Tsugi no eki wa nan desu ka?",
+        "en": "What’s the next station?"
+      },
+      {
+        "jp": "ここでおりてもいいですか？",
+        "romaji": "Koko de orite mo ii desu ka?",
+        "en": "Can I get off here?"
+      }
+    ]
+  },
+  {
+    "id": "daily_life",
+    "title": "Daily Life",
+    "phrases": [
+      {
+        "jp": "トイレはどこですか？",
+        "romaji": "Toire wa doko desu ka?",
+        "en": "Where is the restroom?"
+      },
+      {
+        "jp": "ねむいです",
+        "romaji": "Nemui desu",
+        "en": "I’m sleepy"
+      },
+      {
+        "jp": "おなかすいた",
+        "romaji": "Onaka suita",
+        "en": "I’m hungry"
+      },
+      {
+        "jp": "つかれた",
+        "romaji": "Tsukareta",
+        "en": "I’m tired"
+      },
+      {
+        "jp": "いそがしいです",
+        "romaji": "Isogashii desu",
+        "en": "I’m busy"
       }
     ]
   }

@@ -5,7 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -29,6 +30,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LanguageStudyTheme {
+                // load from remote (GitHub) with assets fallback
                 val situations = remember { RemoteDataSource.fetchSituations(this) }
                 SituationalJapaneseUI(situations)
             }
@@ -40,55 +42,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SituationalJapaneseUI(situations: List<Situation>) {
     var selectedTabIndex by remember { mutableStateOf(0) }
+    // global default for new cards
     var showJapaneseFirst by remember { mutableStateOf(true) }
 
     Scaffold(
         topBar = {
-            // Gradient Header wrapped in Surface (for elevation)
-            Surface(
-                tonalElevation = 6.dp,
-                shadowElevation = 6.dp,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(
-                        Brush.horizontalGradient(
-                            listOf(
-                                MaterialTheme.colorScheme.primary,
-                                MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
-                                MaterialTheme.colorScheme.secondary
-                            )
-                        )
-                    )
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 14.dp, horizontal = 16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = "🎌 Situational Japanese",
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = Color.White,
-                        modifier = Modifier.padding(start = 8.dp)
-                    )
-
-                    TextButton(
-                        onClick = { showJapaneseFirst = !showJapaneseFirst },
-                        colors = ButtonDefaults.textButtonColors(
-                            contentColor = Color.White.copy(alpha = 0.95f)
-                        )
-                    ) {
-                        Text(
-                            text = if (showJapaneseFirst) "JP" else "EN",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                }
-            }
+            HeaderBar(
+                showJapaneseFirst = showJapaneseFirst,
+                onToggle = { showJapaneseFirst = !showJapaneseFirst }
+            )
         }
     ) { padding ->
         if (situations.isEmpty()) {
@@ -98,10 +60,7 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                     .fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    "No data found (remote + assets both failed)",
-                    modifier = Modifier.padding(16.dp)
-                )
+                Text("No data found (remote + assets both failed)")
             }
         } else {
             Column(
@@ -110,7 +69,7 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.1f))
             ) {
-                // Tabs
+                // top tabs
                 ScrollableTabRow(
                     selectedTabIndex = selectedTabIndex,
                     containerColor = MaterialTheme.colorScheme.surface,
@@ -149,9 +108,68 @@ fun SituationalJapaneseUI(situations: List<Situation>) {
                             )
                         }
                     }
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxWidth(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("No phrases in this section")
+                    }
                 }
 
                 FooterBar()
+            }
+        }
+    }
+}
+
+@Composable
+fun HeaderBar(
+    showJapaneseFirst: Boolean,
+    onToggle: () -> Unit
+) {
+    Surface(
+        tonalElevation = 6.dp,
+        shadowElevation = 6.dp,
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                Brush.horizontalGradient(
+                    listOf(
+                        MaterialTheme.colorScheme.primary,
+                        MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
+                        MaterialTheme.colorScheme.secondary
+                    )
+                )
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 14.dp, horizontal = 16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "🎌 Situational Japanese",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.ExtraBold,
+                color = Color.White,
+                modifier = Modifier.padding(start = 4.dp)
+            )
+            TextButton(
+                onClick = onToggle,
+                colors = ButtonDefaults.textButtonColors(
+                    contentColor = Color.White.copy(alpha = 0.95f)
+                )
+            ) {
+                Text(
+                    text = if (showJapaneseFirst) "JP" else "EN",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
     }
@@ -190,7 +208,7 @@ fun FooterBar() {
                 fontWeight = FontWeight.Medium
             )
             Text(
-                text = "• v1.0",   // ← hardcoded for now
+                text = "• v1.0",
                 fontSize = 12.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
             )
@@ -203,7 +221,7 @@ fun PhraseCard(
     phrase: Phrase,
     defaultShowJapaneseFirst: Boolean
 ) {
-    // start rotated depending on global toggle
+    // start on JP or EN depending on global toggle
     var baseRotation by remember {
         mutableStateOf(if (defaultShowJapaneseFirst) 0f else 180f)
     }
@@ -229,7 +247,7 @@ fun PhraseCard(
     ) {
         val rotation = animatedRotation % 360f
 
-        // Front = Japanese
+        // Front (JP side)
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -239,7 +257,9 @@ fun PhraseCard(
                 },
             shape = RoundedCornerShape(16.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface
+            )
         ) {
             Column(Modifier.padding(16.dp)) {
                 Text(
@@ -256,7 +276,7 @@ fun PhraseCard(
             }
         }
 
-        // Back = English
+        // Back (EN side)
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -266,7 +286,9 @@ fun PhraseCard(
                 },
             shape = RoundedCornerShape(16.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface
+            )
         ) {
             Column(Modifier.padding(16.dp)) {
                 Text(
@@ -284,4 +306,3 @@ fun PhraseCard(
         }
     }
 }
-4
