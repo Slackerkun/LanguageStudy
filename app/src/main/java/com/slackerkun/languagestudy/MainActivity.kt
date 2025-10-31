@@ -1,6 +1,7 @@
 package com.slackerkun.languagestudy
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -17,6 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -178,9 +183,9 @@ fun CategoryBar(
                     text = situation.title,
                     color = fg,
                     fontWeight = if (isSelected)
-                        androidx.compose.ui.text.font.FontWeight.Bold
+                        FontWeight.Bold
                     else
-                        androidx.compose.ui.text.font.FontWeight.Normal
+                        FontWeight.Normal
                 )
             }
         }
@@ -192,6 +197,9 @@ fun PhraseList(
     situation: Situation?,
     showJapanese: Boolean
 ) {
+    val context = LocalContext.current
+    val clipboardManager = LocalClipboardManager.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -206,12 +214,15 @@ fun PhraseList(
         situation.phrases.forEach { phrase ->
             var flipped by remember(phrase.jp) { mutableStateOf(false) }
 
+            // what we show now
             val showFront = if (flipped) !showJapanese else showJapanese
+            val mainText = if (showFront) phrase.jp else phrase.en
 
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 8.dp)
+                    // tap body = flip
                     .clickable { flipped = !flipped },
             ) {
                 Column(
@@ -219,6 +230,35 @@ fun PhraseList(
                         .fillMaxWidth()
                         .padding(12.dp)
                 ) {
+                    // header row with copy button
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = if (showFront) "Japanese" else "English",
+                            fontSize = 12.sp,
+                            color = Color.Gray
+                        )
+
+                        Text(
+                            text = "Copy",
+                            color = Color(0xFF00796B),
+                            fontSize = 12.sp,
+                            modifier = Modifier
+                                .clickable {
+                                    clipboardManager.setText(AnnotatedString(mainText))
+                                    Toast
+                                        .makeText(context, "Copied: $mainText", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                                .padding(4.dp)
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(4.dp))
+
                     if (showFront) {
                         Text(text = phrase.jp, fontSize = 18.sp)
                         Spacer(modifier = Modifier.height(2.dp))

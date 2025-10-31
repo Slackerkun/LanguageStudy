@@ -1124,5 +1124,141 @@
         "en": "Message me when you wake up."
       }
     ]
+  },
+  {
+    "id": "meeting_people",
+    "title": "Meeting People",
+    "phrases": [
+      {
+        "jp": "なまえ は なに？",
+        "romaji": "namae wa nani?",
+        "en": "What's your name?",
+        "note": "casual"
+      },
+      {
+        "jp": "どこ から きた の？",
+        "romaji": "doko kara kita no?",
+        "en": "Where are you from?"
+      },
+      {
+        "jp": "いくつ ですか？",
+        "romaji": "ikutsu desu ka?",
+        "en": "How old are you?",
+        "note": "friendly"
+      },
+      {
+        "jp": "どこ に すんでる の？",
+        "romaji": "doko ni sunderu no?",
+        "en": "Where do you live?"
+      },
+      {
+        "jp": "しごと は なに してる の？",
+        "romaji": "shigoto wa nani shiteru no?",
+        "en": "What do you do for work?"
+      },
+      {
+        "jp": "がっこう は どこ？",
+        "romaji": "gakkou wa doko?",
+        "en": "Where’s your school?",
+        "note": "student context"
+      },
+      {
+        "jp": "なに が すき？",
+        "romaji": "nani ga suki?",
+        "en": "What do you like?"
+      },
+      {
+        "jp": "しゅみ は なに？",
+        "romaji": "shumi wa nani?",
+        "en": "What’s your hobby?"
+      },
+      {
+        "jp": "ひま な とき なに してる？",
+        "romaji": "hima na toki nani shiteru?",
+        "en": "What do you do in your free time?"
+      },
+      {
+        "jp": "すき な たべもの は？",
+        "romaji": "suki na tabemono wa?",
+        "en": "What food do you like?"
+      },
+      {
+        "jp": "すき な のみもの は？",
+        "romaji": "suki na nomimono wa?",
+        "en": "What do you like to drink?"
+      },
+      {
+        "jp": "どんな おんがく きく？",
+        "romaji": "donna ongaku kiku?",
+        "en": "What kind of music do you listen to?"
+      },
+      {
+        "jp": "アニメ すき？",
+        "romaji": "anime suki?",
+        "en": "Do you like anime?"
+      },
+      {
+        "jp": "スポーツ する？",
+        "romaji": "supootsu suru?",
+        "en": "Do you play sports?"
+      },
+      {
+        "jp": "どこ に よく いく の？",
+        "romaji": "doko ni yoku iku no?",
+        "en": "Where do you usually go?"
+      },
+      {
+        "jp": "にほん は はじめて？",
+        "romaji": "nihon wa hajimete?",
+        "en": "Is this your first time in Japan?"
+      },
+      {
+        "jp": "どの くらい にほん に いる の？",
+        "romaji": "dono kurai nihon ni iru no?",
+        "en": "How long have you been in Japan?"
+      },
+      {
+        "jp": "ともだち は おおい？",
+        "romaji": "tomodachi wa ooi?",
+        "en": "Do you have many friends?"
+      },
+      {
+        "jp": "インスタ やってる？",
+        "romaji": "insuta yatteru?",
+        "en": "Do you use Instagram?"
+      },
+      {
+        "jp": "LINE してる？",
+        "romaji": "rain shiteru?",
+        "en": "Do you use LINE?"
+      },
+      {
+        "jp": "しゃしん とって も いい？",
+        "romaji": "shashin totte mo ii?",
+        "en": "Can I take a photo?",
+        "note": "friendly"
+      },
+      {
+        "jp": "いっしょ に のもう か？",
+        "romaji": "issho ni nomou ka?",
+        "en": "Wanna grab a drink together?"
+      },
+      {
+        "jp": "また あおう よ",
+        "romaji": "mata aou yo",
+        "en": "Let's meet again!"
+      },
+      {
+        "jp": "つぎ いつ ひま？",
+        "romaji": "tsugi itsu hima?",
+        "en": "When are you free next?"
+      },
+      {
+        "jp": "でんわ ばんごう おしえて",
+        "romaji": "denwa bangou oshiete",
+        "en": "What's your number?",
+        "note": "casual close"
+      }
+    ]
   }
 ]
