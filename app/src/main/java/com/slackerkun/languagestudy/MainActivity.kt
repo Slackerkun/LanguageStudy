@@ -9,11 +9,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -115,7 +117,8 @@ fun HeaderBar_WithLogo(
                 painter = painterResource(id = R.drawable.ic_launcher_playstore),
                 contentDescription = "Nihongo Life logo",
                 modifier = Modifier
-                    .size(32.dp)
+                    .size(36.dp)                 // ⬆️ slightly larger (10%)
+                    .clip(CircleShape)           // ⭕ circular
                     .padding(end = 8.dp)
             )
             Text(

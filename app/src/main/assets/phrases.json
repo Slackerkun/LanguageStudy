@@ -5,78 +5,54 @@
     "phrases": [
       {
         "jp": "アレンはクローゼットのどうせいあいしゃです。",
-        "romaji": "Aren wa kurōzetto no douseiaisha desu.",
+        "romaji": "aren wa kuroozetto no dooseiaisha desu.",
         "en": "Allen is a closeted homosexual."
       },
       {
         "jp": "はじめまして",
         "romaji": "hajimemashite",
-        "en": "Nice to meet you"
+        "en": "Nice to meet you."
       },
       {
         "jp": "○○です",
         "romaji": "___ desu",
-        "en": "I’m ___"
+        "en": "I'm ___.",
+        "note": "put name or nickname"
       },
       {
         "jp": "アメリカからきました",
         "romaji": "amerika kara kimashita",
-        "en": "I’m from the U.S."
+        "en": "I'm from the U.S.."
       },
       {
-        "jp": "いまプー太郎です。だからじぶんのアプリをつくりました。",
-        "romaji": "Ima Pu-tarou desu. Dakara jibun no apuri o tsukurimashita.",
-        "en": "I am Pu-tarou right now so I made my own application."
+        "jp": "いまプーたろうです。だからじぶんのアプリをつくりました。",
+        "romaji": "ima puutarou desu. dakara jibun no apuri o tsukurimashita.",
+        "en": "I'm a bum right now so I made my own app."
       },
       {
-        "jp": "Testing1",
-        "romaji": "Testing1",
-        "en": "Testing1"
+        "jp": "なまえは○○です",
+        "romaji": "namae wa ___ desu",
+        "en": "My name is ___."
       },
       {
-        "jp": "Testing2",
-        "romaji": "Testing2",
-        "en": "Testing2"
+        "jp": "にほんごはまだべんきょうちゅうです",
+        "romaji": "nihongo wa mada benkyoo chuu desu",
+        "en": "I'm still studying Japanese."
       },
       {
-        "jp": "Testing3",
-        "romaji": "Testing3",
-        "en": "Testing3"
+        "jp": "すこしだけはなせます",
+        "romaji": "sukoshi dake hanasemasu",
+        "en": "I can speak a little."
       },
       {
-        "jp": "Testing4",
-        "romaji": "Testing4",
-        "en": "Testing4"
+        "jp": "よろしくおねがいします",
+        "romaji": "yoroshiku onegaishimasu",
+        "en": "Nice to meet you / please be kind to me."
       },
       {
-        "jp": "Testing5",
-        "romaji": "Testing5",
-        "en": "Testing5"
-      },
-      {
-        "jp": "Testing6",
-        "romaji": "Testing6",
-        "en": "Testing6"
-      },
-      {
-        "jp": "Testing7",
-        "romaji": "Testing7",
-        "en": "Testing7"
-      },
-      {
-        "jp": "Testing8",
-        "romaji": "Testing8",
-        "en": "Testing8"
-      },
-      {
-        "jp": "Testing9",
-        "romaji": "Testing9",
-        "en": "Testing9"
-      },
-      {
-        "jp": "Testing10",
-        "romaji": "Testing10",
-        "en": "Testing10"
+        "jp": "きょうからこのアプリにことばをいれていきます",
+        "romaji": "kyoo kara kono apuri ni kotoba o irete ikimasu",
+        "en": "From today I'll add words into this app."
       }
     ]
   },
@@ -85,24 +61,19 @@
     "title": "Phrases",
     "phrases": [
       {
-        "jp": "つかささん、みんなといっしょにとてもたのしかったです！まねいてくれてありがとう！",
-        "romaji": "Tsukasa-san, minna to issho ni totemo tanoshikatta desu! Maneite kurete arigatou!",
-        "en": "Tsukasa, I had a great time with you guys! Thank you for hosting me!"
-      },
-      {
         "jp": "ありがとうございます",
         "romaji": "arigatou gozaimasu",
-        "en": "Thank you"
+        "en": "Thank you."
       },
       {
         "jp": "すみません",
         "romaji": "sumimasen",
-        "en": "Excuse me / I’m sorry"
+        "en": "Excuse me / Sorry."
       },
       {
         "jp": "もういちどおねがいします",
-        "romaji": "mou ichido onegaishimasu",
-        "en": "One more time please"
+        "romaji": "moo ichido onegaishimasu",
+        "en": "One more time please."
       },
       {
         "jp": "ゆっくりはなしてもらえますか",
@@ -112,17 +83,179 @@
       {
         "jp": "わかりました",
         "romaji": "wakarimashita",
-        "en": "Got it / I understand"
+        "en": "Got it / I understand."
       },
       {
         "jp": "わかりません",
         "romaji": "wakarimasen",
-        "en": "I don’t understand"
+        "en": "I don't get it."
       },
       {
         "jp": "だいじょうぶです",
-        "romaji": "daijoubu desu",
-        "en": "It’s okay / I’m fine"
+        "romaji": "daijoobu desu",
+        "en": "It's okay / I'm good."
+      },
+      {
+        "jp": "なんていった？",
+        "romaji": "nante itta?",
+        "en": "What did you say?"
+      },
+      {
+        "jp": "もういっかいおねがい",
+        "romaji": "moo ikkai onegai",
+        "en": "One more time please.",
+        "note": "casual"
+      },
+      {
+        "jp": "なんですか？",
+        "romaji": "nan desu ka?",
+        "en": "What's that? / What is it?"
+      },
+      {
+        "jp": "それいいね",
+        "romaji": "sore ii ne",
+        "en": "That's nice."
+      },
+      {
+        "jp": "それはちがうとおもう",
+        "romaji": "sore wa chigau to omou",
+        "en": "I think that's different."
+      },
+      {
+        "jp": "ほんとうに？",
+        "romaji": "hontoo ni?",
+        "en": "Really?"
+      },
+      {
+        "jp": "まじで？",
+        "romaji": "maji de?",
+        "en": "Seriously?"
+      },
+      {
+        "jp": "なるほど",
+        "romaji": "naruhodo",
+        "en": "I see / got it."
+      },
+      {
+        "jp": "おつかれさま",
+        "romaji": "otsukaresama",
+        "en": "Thanks for today / good job."
+      },
+      {
+        "jp": "おねがいしてもいい？",
+        "romaji": "onegai shite mo ii?",
+        "en": "Can I ask you a favor?"
+      },
+      {
+        "jp": "たすかった",
+        "romaji": "taskatta",
+        "en": "That helped / lifesaver."
+      },
+      {
+        "jp": "いまはちょっとむり",
+        "romaji": "ima wa chotto muri",
+        "en": "I can't right now."
+      },
+      {
+        "jp": "あとでいい？",
+        "romaji": "ato de ii?",
+        "en": "Can it wait? / Later okay?"
+      },
+      {
+        "jp": "どっちでもいいよ",
+        "romaji": "docchi demo ii yo",
+        "en": "Either is fine."
+      },
+      {
+        "jp": "いいかんじ",
+        "romaji": "ii kanji",
+        "en": "Looks good / feels good."
+      },
+      {
+        "jp": "いいねそれ",
+        "romaji": "ii ne sore",
+        "en": "That's good."
+      },
+      {
+        "jp": "きょうなにする？",
+        "romaji": "kyou nani suru?",
+        "en": "What are we doing today?"
+      },
+      {
+        "jp": "どこいく？",
+        "romaji": "doko iku?",
+        "en": "Where are we going?"
+      },
+      {
+        "jp": "まって",
+        "romaji": "matte",
+        "en": "Wait."
+      },
+      {
+        "jp": "ちょっとまって",
+        "romaji": "chatto matte",
+        "en": "Hold on a sec."
+      },
+      {
+        "jp": "いまいく",
+        "romaji": "ima iku",
+        "en": "I'm coming."
+      },
+      {
+        "jp": "おそくなってごめん",
+        "romaji": "osoku natte gomen",
+        "en": "Sorry I'm late."
+      },
+      {
+        "jp": "ありがとうたすかる",
+        "romaji": "arigatou tasukaru",
+        "en": "Thanks",
+        "note": "that helps."
+      },
+      {
+        "jp": "きをつけてね",
+        "romaji": "ki o tsukete ne",
+        "en": "Take care."
+      },
+      {
+        "jp": "じゃあまたね",
+        "romaji": "jaa mata ne",
+        "en": "See you."
+      },
+      {
+        "jp": "いってきます",
+        "romaji": "itte kimasu",
+        "en": "I'm heading out."
+      },
+      {
+        "jp": "いってらっしゃい",
+        "romaji": "itterasshai",
+        "en": "See you / have a good one."
+      },
+      {
+        "jp": "おかえり",
+        "romaji": "okaeri",
+        "en": "Welcome back."
+      },
+      {
+        "jp": "ただいま",
+        "romaji": "tadaima",
+        "en": "I'm home / I'm back."
+      },
+      {
+        "jp": "ひさしぶり",
+        "romaji": "hisashiburi",
+        "en": "Long time no see."
+      },
+      {
+        "jp": "どうしたの？",
+        "romaji": "doo shita no?",
+        "en": "What's wrong?"
+      },
+      {
+        "jp": "だいじょうぶ？",
+        "romaji": "daijoobu?",
+        "en": "You okay?"
       }
     ]
   },
@@ -133,17 +266,77 @@
       {
         "jp": "いらっしゃいませ",
         "romaji": "irasshaimase",
-        "en": "welcome (staff)"
+        "en": "Welcome (staff)."
       },
       {
         "jp": "よやくしていません",
         "romaji": "yoyaku shiteimasen",
-        "en": "I don’t have a reservation"
+        "en": "I don't have a reservation."
       },
       {
         "jp": "おかいけいおねがいします",
         "romaji": "okaikei onegaishimasu",
-        "en": "Check Please"
+        "en": "Check please."
+      },
+      {
+        "jp": "めにゅーありますか？",
+        "romaji": "menyuu arimasu ka?",
+        "en": "Do you have a menu?"
+      },
+      {
+        "jp": "えいごのめにゅーありますか？",
+        "romaji": "eigo no menyuu arimasu ka?",
+        "en": "Do you have an English menu?"
+      },
+      {
+        "jp": "これとおなじのください",
+        "romaji": "kore to onaji no kudasai",
+        "en": "I'll have the same as this."
+      },
+      {
+        "jp": "おみずください",
+        "romaji": "omizu kudasai",
+        "en": "Water please."
+      },
+      {
+        "jp": "おちゃでもいいです",
+        "romaji": "ocha demo ii desu",
+        "en": "Tea is fine."
+      },
+      {
+        "jp": "まえとおなじのにします",
+        "romaji": "mae to onaji no ni shimasu",
+        "en": "I'll get the same as last time."
+      },
+      {
+        "jp": "ちゅうもんしてもいいですか？",
+        "romaji": "chuumon shite mo ii desu ka?",
+        "en": "Can I order?"
+      },
+      {
+        "jp": "もちかえりでおねがいします",
+        "romaji": "mochikaeri de onegaishimasu",
+        "en": "To go please."
+      },
+      {
+        "jp": "からくないやつありますか？",
+        "romaji": "karakunai yatsu arimasu ka?",
+        "en": "Do you have something not spicy?"
+      },
+      {
+        "jp": "すこしだけからくして",
+        "romaji": "sukoshi dake karaku shite",
+        "en": "Make it a little spicy."
+      },
+      {
+        "jp": "わりかんでいいですか？",
+        "romaji": "warikan de ii desu ka?",
+        "en": "Is splitting okay?"
+      },
+      {
+        "jp": "めっちゃおいしかったです",
+        "romaji": "metcha oishikatta desu",
+        "en": "That was really good."
       }
     ]
   },
@@ -153,28 +346,142 @@
     "phrases": [
       {
         "jp": "かんぱい！",
-        "romaji": "Kanpai!",
-        "en": "Cheers!"
+        "romaji": "kanpai!",
+        "en": "Cheers!",
+        "note": "Classic"
       },
       {
-        "jp": "なにがおすすめですか？",
-        "romaji": "Nani ga osusume desu ka?",
-        "en": "What do you recommend?"
+        "jp": "なにのむ？",
+        "romaji": "nani nomu?",
+        "en": "What are you drinking?",
+        "note": "casual"
       },
       {
-        "jp": "ビールをください",
-        "romaji": "Biiru o kudasai",
-        "en": "A beer, please"
+        "jp": "とりあえずビールで",
+        "romaji": "toriaezu biiru de",
+        "en": "Beer to start!",
+        "note": "very common"
       },
       {
-        "jp": "おかわりおねがいします",
-        "romaji": "Okawari onegaishimasu",
-        "en": "Another round, please"
+        "jp": "ビールもういっぱい！",
+        "romaji": "biiru mou ippai!",
+        "en": "Another beer!"
       },
       {
-        "jp": "おさけはつよくないです",
-        "romaji": "Osake wa tsuyokunai desu",
-        "en": "I’m not good with alcohol"
+        "jp": "おかわりおねがい！",
+        "romaji": "okawari onegai!",
+        "en": "Another round please!",
+        "note": "casual"
+      },
+      {
+        "jp": "のみほうだいはいくら？",
+        "romaji": "nomihoudai wa ikura?",
+        "en": "How much is all-you-can-drink?"
+      },
+      {
+        "jp": "めがさいずありますか？",
+        "romaji": "mega saizu arimasu ka?",
+        "en": "Do you have mega size drinks?"
+      },
+      {
+        "jp": "あまいカクテルある？",
+        "romaji": "amai kakuteru aru?",
+        "en": "Got any sweet cocktails?"
+      },
+      {
+        "jp": "ショットいこう！",
+        "romaji": "shotto ikou!",
+        "en": "Let's do shots!"
+      },
+      {
+        "jp": "はい、いっき！",
+        "romaji": "hai",
+        "en": "ikki!",
+        "note": "Bottoms up! / Chug!"
+      },
+      {
+        "jp": "のみすぎた",
+        "romaji": "nomisugita",
+        "en": "I drank too much."
+      },
+      {
+        "jp": "よっぱらったー",
+        "romaji": "yopparatta!",
+        "en": "I'm drunk!",
+        "note": "funny / casual"
+      },
+      {
+        "jp": "さいごのいっぱいね",
+        "romaji": "saigo no ippai ne",
+        "en": "Last drink",
+        "note": "yeah?"
+      },
+      {
+        "jp": "もういっぱいだけ",
+        "romaji": "mou ippai dake",
+        "en": "Just one more…",
+        "note": "famous lie"
+      },
+      {
+        "jp": "のんでからかえろ",
+        "romaji": "nonde kara kaero",
+        "en": "Let's drink before we go home."
+      },
+      {
+        "jp": "しめはラーメンいこう",
+        "romaji": "shime wa raamen ikou",
+        "en": "Let's finish with ramen.",
+        "note": "after-drinking ramen"
+      },
+      {
+        "jp": "となりのひとにかんぱいしよう",
+        "romaji": "tonari no hito ni kanpai shiyou",
+        "en": "Let's cheers with the person next to us!",
+        "note": "funny"
+      },
+      {
+        "jp": "いまいいきぶん！",
+        "romaji": "ima ii kibun!",
+        "en": "I feel great right now!",
+        "note": "tipsy"
+      },
+      {
+        "jp": "まだのめる！",
+        "romaji": "mada nomeru!",
+        "en": "I can still drink!"
+      },
+      {
+        "jp": "もうむり…",
+        "romaji": "mou muri…",
+        "en": "I'm done… / Can't anymore..."
+      },
+      {
+        "jp": "たのしいね！",
+        "romaji": "tanoshii ne!",
+        "en": "This is fun!"
+      },
+      {
+        "jp": "おごって！",
+        "romaji": "ogotte!",
+        "en": "Your treat!",
+        "note": "joking tone"
+      },
+      {
+        "jp": "つぎなにのむ？",
+        "romaji": "tsugi nani nomu?",
+        "en": "What are you drinking next?"
+      },
+      {
+        "jp": "おなかすいたね",
+        "romaji": "onaka suita ne",
+        "en": "Getting hungry huh?",
+        "note": "leads to food order"
+      },
+      {
+        "jp": "やばい、よっぱらった",
+        "romaji": "yabai",
+        "en": "yopparatta",
+        "note": "Oh no"
       }
     ]
   },
@@ -184,28 +491,128 @@
     "phrases": [
       {
         "jp": "これをください",
-        "romaji": "Kore o kudasai",
-        "en": "I’ll take this one"
+        "romaji": "kore o kudasai",
+        "en": "I'll take this one."
       },
       {
         "jp": "いくらですか？",
-        "romaji": "Ikura desu ka?",
+        "romaji": "ikura desu ka?",
         "en": "How much is it?"
       },
       {
         "jp": "カードつかえますか？",
-        "romaji": "Kaado tsukaemasu ka?",
+        "romaji": "kaado tsukaemasu ka?",
         "en": "Can I use a card?"
       },
       {
         "jp": "レシートください",
-        "romaji": "Reshīto kudasai",
-        "en": "Receipt, please"
+        "romaji": "reshiito kudasai",
+        "en": "Receipt please."
       },
       {
         "jp": "べつのサイズありますか？",
-        "romaji": "Betsu no saizu arimasu ka?",
+        "romaji": "betsu no saizu arimasu ka?",
         "en": "Do you have another size?"
+      },
+      {
+        "jp": "ちょっとたかいですね",
+        "romaji": "chotto takai desu ne",
+        "en": "That's a bit expensive."
+      },
+      {
+        "jp": "もっとやすいのありますか？",
+        "romaji": "motto yasui no arimasu ka?",
+        "en": "Do you have something cheaper?"
+      },
+      {
+        "jp": "ためしてもいいですか？",
+        "romaji": "tameshite mo ii desu ka?",
+        "en": "Can I try it?"
+      },
+      {
+        "jp": "みてるだけです",
+        "romaji": "miteru dake desu",
+        "en": "I'm just looking."
+      },
+      {
+        "jp": "ふくのコーナーはどこですか？",
+        "romaji": "fuku no koonaa wa doko desu ka?",
+        "en": "Where are the clothes?"
+      },
+      {
+        "jp": "こどもようはどこですか？",
+        "romaji": "kodomo yoo wa doko desu ka?",
+        "en": "Where is the kids section?"
+      },
+      {
+        "jp": "ポイントつきますか？",
+        "romaji": "pointo tsukimasu ka?",
+        "en": "Do I get points?"
+      },
+      {
+        "jp": "ぶくろいりますか？",
+        "romaji": "bukuro irimasu ka?",
+        "en": "Do you need a bag?"
+      },
+      {
+        "jp": "ぶくろはいらないです",
+        "romaji": "bukuro wa iranai desu",
+        "en": "I don't need a bag."
+      },
+      {
+        "jp": "でんしマネーつかえますか？",
+        "romaji": "denshi manee tsukaemasu ka?",
+        "en": "Can I use e-money?"
+      },
+      {
+        "jp": "きょうのセールはなに？",
+        "romaji": "kyou no seeru wa nani?",
+        "en": "What's on sale today?"
+      },
+      {
+        "jp": "これとおなじのありますか？",
+        "romaji": "kore to onaji no arimasu ka?",
+        "en": "Do you have the same one?"
+      },
+      {
+        "jp": "いろちがいありますか？",
+        "romaji": "iro chigai arimasu ka?",
+        "en": "Do you have other colors?"
+      },
+      {
+        "jp": "とりおきできますか？",
+        "romaji": "torioki dekimasu ka?",
+        "en": "Can you hold it for me?"
+      },
+      {
+        "jp": "とどけてもらえますか？",
+        "romaji": "todokete moraemasu ka?",
+        "en": "Can you deliver it?"
+      },
+      {
+        "jp": "げんきんでいいです",
+        "romaji": "genkin de ii desu",
+        "en": "Cash is fine."
+      },
+      {
+        "jp": "カードでおねがいします",
+        "romaji": "kaado de onegaishimasu",
+        "en": "Card please."
+      },
+      {
+        "jp": "レジはどこですか？",
+        "romaji": "reji wa doko desu ka?",
+        "en": "Where is the register?"
+      },
+      {
+        "jp": "トイレかりてもいいですか？",
+        "romaji": "toire karite mo ii desu ka?",
+        "en": "Can I use the restroom?"
+      },
+      {
+        "jp": "ありがとうございました",
+        "romaji": "arigatou gozaimashita",
+        "en": "Thank you very much."
       }
     ]
   },
@@ -215,28 +622,128 @@
     "phrases": [
       {
         "jp": "このでんしゃはしんじゅくにいきますか？",
-        "romaji": "Kono densha wa Shinjuku ni ikimasu ka?",
+        "romaji": "kono densha wa shinjuku ni ikimasu ka?",
         "en": "Does this train go to Shinjuku?"
       },
       {
         "jp": "きっぷをかいたいです",
-        "romaji": "Kippu o kaitai desu",
-        "en": "I’d like to buy a ticket"
+        "romaji": "kippu o kaitai desu",
+        "en": "I'd like to buy a ticket."
       },
       {
         "jp": "どのせんですか？",
-        "romaji": "Dono sen desu ka?",
+        "romaji": "dono sen desu ka?",
         "en": "Which line is it?"
       },
       {
         "jp": "つぎのえきはなんですか？",
-        "romaji": "Tsugi no eki wa nan desu ka?",
-        "en": "What’s the next station?"
+        "romaji": "tsugi no eki wa nan desu ka?",
+        "en": "What's the next station?"
       },
       {
         "jp": "ここでおりてもいいですか？",
-        "romaji": "Koko de orite mo ii desu ka?",
+        "romaji": "koko de orite mo ii desu ka?",
         "en": "Can I get off here?"
+      },
+      {
+        "jp": "のりかえはどこですか？",
+        "romaji": "norikae wa doko desu ka?",
+        "en": "Where do I transfer?"
+      },
+      {
+        "jp": "ちょくせついくバスありますか？",
+        "romaji": "chokusetsu iku basu arimasu ka?",
+        "en": "Is there a bus that goes there directly?"
+      },
+      {
+        "jp": "スイカつかえますか？",
+        "romaji": "suika tsukaemasu ka?",
+        "en": "Can I use Suica?"
+      },
+      {
+        "jp": "いきかたおしえてください",
+        "romaji": "ikikata oshiete kudasai",
+        "en": "Please tell me how to get there."
+      },
+      {
+        "jp": "まどがわいいです",
+        "romaji": "madogawa ii desu",
+        "en": "Window seat please."
+      },
+      {
+        "jp": "はやいやつとおそいやつどっちですか？",
+        "romaji": "hayai yatsu to osoi yatsu docchi desu ka?",
+        "en": "Which one is the fast one?"
+      },
+      {
+        "jp": "でぐちAはどこですか？",
+        "romaji": "deguchi ee wa doko desu ka?",
+        "en": "Where is exit A?"
+      },
+      {
+        "jp": "ちがうでんしゃにのっちゃいました",
+        "romaji": "chigau densha ni nocchaimashita",
+        "en": "I got on the wrong train."
+      },
+      {
+        "jp": "まにあわないかも",
+        "romaji": "maniawanai kamo",
+        "en": "I might not make it."
+      },
+      {
+        "jp": "おくれてますか？",
+        "romaji": "okurete masu ka?",
+        "en": "Is it delayed?"
+      },
+      {
+        "jp": "このタクシーつかっていいですか？",
+        "romaji": "kono takushii tsukatte ii desu ka?",
+        "en": "Can I take this taxi?"
+      },
+      {
+        "jp": "タクシーで○○までおねがいします",
+        "romaji": "takushii de ___ made onegaishimasu",
+        "en": "To ___ by taxi please."
+      },
+      {
+        "jp": "メーターでおねがいします",
+        "romaji": "meeta de onegaishimasu",
+        "en": "Please use the meter."
+      },
+      {
+        "jp": "ここでとめてください",
+        "romaji": "koko de tomete kudasai",
+        "en": "Please stop here."
+      },
+      {
+        "jp": "ラッシュのじかんですか？",
+        "romaji": "rasshu no jikan desu ka?",
+        "en": "Is it rush hour?"
+      },
+      {
+        "jp": "いまなんぷんおきですか？",
+        "romaji": "ima nanpun oki desu ka?",
+        "en": "How often does it come?"
+      },
+      {
+        "jp": "おりるときおしえてください",
+        "romaji": "oriru toki oshiete kudasai",
+        "en": "Please tell me when to get off."
+      },
+      {
+        "jp": "りょこうのきっぷかえますか？",
+        "romaji": "ryokou no kippu kaemasu ka?",
+        "en": "Can I buy a travel ticket?"
+      },
+      {
+        "jp": "くうこうまでどのくらいですか？",
+        "romaji": "kuukou made dono kurai desu ka?",
+        "en": "How long to the airport?"
+      },
+      {
+        "jp": "スーツケースここにおいていいですか？",
+        "romaji": "suutsukeesu koko ni oite ii desu ka?",
+        "en": "Can I put my suitcase here?"
       }
     ]
   },
@@ -246,28 +753,379 @@
     "phrases": [
       {
         "jp": "トイレはどこですか？",
-        "romaji": "Toire wa doko desu ka?",
+        "romaji": "toire wa doko desu ka?",
         "en": "Where is the restroom?"
       },
       {
         "jp": "ねむいです",
-        "romaji": "Nemui desu",
-        "en": "I’m sleepy"
+        "romaji": "nemui desu",
+        "en": "I'm sleepy."
       },
       {
         "jp": "おなかすいた",
-        "romaji": "Onaka suita",
-        "en": "I’m hungry"
+        "romaji": "onaka suita",
+        "en": "I'm hungry."
       },
       {
         "jp": "つかれた",
-        "romaji": "Tsukareta",
-        "en": "I’m tired"
+        "romaji": "tsukareta",
+        "en": "I'm tired."
       },
       {
         "jp": "いそがしいです",
-        "romaji": "Isogashii desu",
-        "en": "I’m busy"
+        "romaji": "isogashii desu",
+        "en": "I'm busy."
+      },
+      {
+        "jp": "ちょっとやすみたい",
+        "romaji": "chotto yasumitai",
+        "en": "I wanna rest a bit."
+      },
+      {
+        "jp": "コーヒーのみたい",
+        "romaji": "koohii nomitai",
+        "en": "I want coffee."
+      },
+      {
+        "jp": "シャワーあびたい",
+        "romaji": "shawaa abitai",
+        "en": "I wanna take a shower."
+      },
+      {
+        "jp": "ねるじゅんびする",
+        "romaji": "neru junbi suru",
+        "en": "I'm gonna get ready for bed."
+      },
+      {
+        "jp": "でかけてくる",
+        "romaji": "dekakete kuru",
+        "en": "I'm going out for a bit."
+      },
+      {
+        "jp": "いまかえってるとこ",
+        "romaji": "ima kaetteru toko",
+        "en": "I'm on my way home."
+      },
+      {
+        "jp": "ゴミだしておいて",
+        "romaji": "gomi dashite oite",
+        "en": "Take out the trash."
+      },
+      {
+        "jp": "あとでやる",
+        "romaji": "ato de yaru",
+        "en": "I'll do it later."
+      },
+      {
+        "jp": "いまやるから",
+        "romaji": "ima yaru kara",
+        "en": "I'll do it now."
+      },
+      {
+        "jp": "てつだおうか？",
+        "romaji": "tetsudaoo ka?",
+        "en": "Need help?"
+      },
+      {
+        "jp": "てつだってくれてありがとう",
+        "romaji": "tetsudatte kurete arigatou",
+        "en": "Thanks for helping."
+      },
+      {
+        "jp": "ドアしめて",
+        "romaji": "doa shimete",
+        "en": "Close the door."
+      },
+      {
+        "jp": "エアコンつけて",
+        "romaji": "eakon tsukete",
+        "en": "Turn on the AC."
+      },
+      {
+        "jp": "エアコンけして",
+        "romaji": "eakon keshite",
+        "en": "Turn off the AC."
+      },
+      {
+        "jp": "テレビけして",
+        "romaji": "terebi keshite",
+        "en": "Turn off the TV."
+      },
+      {
+        "jp": "いまなんじ？",
+        "romaji": "ima nanji?",
+        "en": "What time is it?"
+      },
+      {
+        "jp": "いまでるよ",
+        "romaji": "ima deru yo",
+        "en": "I'm heading out now."
+      },
+      {
+        "jp": "いまいそいでる",
+        "romaji": "ima isoideru",
+        "en": "I'm in a hurry right now."
+      },
+      {
+        "jp": "おきて",
+        "romaji": "okite",
+        "en": "Wake up."
+      },
+      {
+        "jp": "まだねむい",
+        "romaji": "mada nemui",
+        "en": "Still sleepy."
+      },
+      {
+        "jp": "おふろはいる？",
+        "romaji": "ofuro hairu?",
+        "en": "Are you gonna take a bath?"
+      },
+      {
+        "jp": "さきにはいっていいよ",
+        "romaji": "saki ni haitte ii yo",
+        "en": "You can go first."
+      },
+      {
+        "jp": "あついね",
+        "romaji": "atsui ne",
+        "en": "It's hot huh."
+      },
+      {
+        "jp": "さむいね",
+        "romaji": "samui ne",
+        "en": "It's cold huh."
+      },
+      {
+        "jp": "おなかいっぱい",
+        "romaji": "onaka ippai",
+        "en": "I'm full."
+      },
+      {
+        "jp": "のどかわいた",
+        "romaji": "nodo kawaita",
+        "en": "I'm thirsty."
+      },
+      {
+        "jp": "なんかたべる？",
+        "romaji": "nanka taberu?",
+        "en": "Wanna eat something?"
+      },
+      {
+        "jp": "どっかいこうよ",
+        "romaji": "dokka ikou yo",
+        "en": "Let's go somewhere."
+      },
+      {
+        "jp": "ゲームしよう",
+        "romaji": "geemu shiyou",
+        "en": "Let's play a game."
+      },
+      {
+        "jp": "ねっとがきれた",
+        "romaji": "netto ga kireta",
+        "en": "The internet died."
+      },
+      {
+        "jp": "Wi-Fiのぱすわーどなに？",
+        "romaji": "waifai no pasuwaado nani?",
+        "en": "What's the Wi-Fi password?"
+      },
+      {
+        "jp": "でんきつけて",
+        "romaji": "denki tsukete",
+        "en": "Turn on the light."
+      },
+      {
+        "jp": "でんきけして",
+        "romaji": "denki keshite",
+        "en": "Turn off the light."
+      },
+      {
+        "jp": "あしたなんじにおきる？",
+        "romaji": "ashita nanji ni okiru?",
+        "en": "What time are you waking up tomorrow?"
+      },
+      {
+        "jp": "あしたでかける？",
+        "romaji": "ashita dekakeru?",
+        "en": "Going out tomorrow?"
+      },
+      {
+        "jp": "きょうのよていは？",
+        "romaji": "kyou no yotei wa?",
+        "en": "What's today's plan?"
+      },
+      {
+        "jp": "ちょっとでんわしてくる",
+        "romaji": "chotto denwa shite kuru",
+        "en": "I'm gonna make a call real quick."
+      },
+      {
+        "jp": "LINEみてね",
+        "romaji": "rain mite ne",
+        "en": "Check LINE ok?"
+      },
+      {
+        "jp": "おきゃくさんくるよ",
+        "romaji": "okyakusan kuru yo",
+        "en": "We have guests coming."
+      },
+      {
+        "jp": "そうじしよう",
+        "romaji": "sooji shiyou",
+        "en": "Let's clean."
+      },
+      {
+        "jp": "ゴミあつめて",
+        "romaji": "gomi atsumete",
+        "en": "Collect the trash."
+      },
+      {
+        "jp": "まどあけて",
+        "romaji": "mado akete",
+        "en": "Open the window."
+      },
+      {
+        "jp": "まどしめて",
+        "romaji": "mado shimete",
+        "en": "Close the window."
+      },
+      {
+        "jp": "はやくかえってきてね",
+        "romaji": "hayaku kaette kite ne",
+        "en": "Come home early ok?"
+      },
+      {
+        "jp": "きをつけてかえってね",
+        "romaji": "ki o tsukete kaette ne",
+        "en": "Get home safe."
+      },
+      {
+        "jp": "スーパーいってくる",
+        "romaji": "suupaa itte kuru",
+        "en": "I'm going to the supermarket."
+      },
+      {
+        "jp": "なにかう？",
+        "romaji": "nani kau?",
+        "en": "What should I buy?"
+      },
+      {
+        "jp": "なにかってくる？",
+        "romaji": "nani katte kuru?",
+        "en": "Want me to buy something?"
+      },
+      {
+        "jp": "パンでいい？",
+        "romaji": "pan de ii?",
+        "en": "Is bread okay?"
+      },
+      {
+        "jp": "きょうはめしぬき",
+        "romaji": "kyou wa meshi nuki",
+        "en": "Skipping dinner today."
+      },
+      {
+        "jp": "コンビニでいい？",
+        "romaji": "konbini de ii?",
+        "en": "Convenience store is fine?"
+      },
+      {
+        "jp": "はらいたい",
+        "romaji": "haraitai",
+        "en": "My stomach hurts."
+      },
+      {
+        "jp": "あたまいたい",
+        "romaji": "atama itai",
+        "en": "My head hurts."
+      },
+      {
+        "jp": "ちょっとねつあるかも",
+        "romaji": "chotto netsu aru kamo",
+        "en": "I might have a bit of a fever."
+      },
+      {
+        "jp": "きょうははやくねる",
+        "romaji": "kyou wa hayaku neru",
+        "en": "I'm going to sleep early today."
+      },
+      {
+        "jp": "おそくまでおきてた",
+        "romaji": "osoku made okiteta",
+        "en": "I stayed up late."
+      },
+      {
+        "jp": "しごとおわった",
+        "romaji": "shigoto owatta",
+        "en": "Work's done."
+      },
+      {
+        "jp": "まだしごとしてる",
+        "romaji": "mada shigoto shiteru",
+        "en": "I'm still working."
+      },
+      {
+        "jp": "いまかいてる",
+        "romaji": "ima kaiteru",
+        "en": "I'm typing right now."
+      },
+      {
+        "jp": "いままなでる",
+        "romaji": "ima manaderu",
+        "en": "I'm studying now."
+      },
+      {
+        "jp": "ビールのんでる",
+        "romaji": "biiru nonderu",
+        "en": "I'm drinking beer."
+      },
+      {
+        "jp": "テレビみてる",
+        "romaji": "terebi miteru",
+        "en": "I'm watching TV."
+      },
+      {
+        "jp": "ひまだったらおいで",
+        "romaji": "hima dattara oide",
+        "en": "If you're free",
+        "note": "come over."
+      },
+      {
+        "jp": "ちょっとでた",
+        "romaji": "chotto deta",
+        "en": "I just stepped out."
+      },
+      {
+        "jp": "いまかえりみち",
+        "romaji": "ima kaeri michi",
+        "en": "I'm on the way back."
+      },
+      {
+        "jp": "かぎしめた？",
+        "romaji": "kagi shimeta?",
+        "en": "Did you lock it?"
+      },
+      {
+        "jp": "せんたくものいれといて",
+        "romaji": "sentaku mono iretuite",
+        "en": "Put the laundry in."
+      },
+      {
+        "jp": "あめふってる？",
+        "romaji": "ame futteru?",
+        "en": "Is it raining?"
+      },
+      {
+        "jp": "かさもってってね",
+        "romaji": "kasa motte tte ne",
+        "en": "Take an umbrella."
+      },
+      {
+        "jp": "おきたられんらくして",
+        "romaji": "okitara renraku shite",
+        "en": "Message me when you wake up."
       }
     ]
   }
