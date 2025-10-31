@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.slackerkun.languagestudy.ui.theme.LanguageStudyTheme
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
@@ -39,14 +40,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun NihongoLifeScreen() {
     val ctx = androidx.compose.ui.platform.LocalContext.current
+    val scope = rememberCoroutineScope()
 
     var situations by remember { mutableStateOf<List<Situation>>(emptyList()) }
     var selectedCategoryId by remember { mutableStateOf<String?>(null) }
     var showJapanese by remember { mutableStateOf(true) }
     var remoteStatus by remember { mutableStateOf<RemoteStatus?>(null) }
+    var isRefreshing by remember { mutableStateOf(false) }
+    var errorText by remember { mutableStateOf<String?>(null) }
 
-    // load once
+    // initial load
     LaunchedEffect(Unit) {
+        isRefreshing = true
         val result = withContext(Dispatchers.IO) {
             RemoteDataSource.fetchSituations(ctx)
         }
@@ -55,16 +60,66 @@ fun NihongoLifeScreen() {
         if (situations.isNotEmpty()) {
             selectedCategoryId = situations.first().id
         }
+        isRefreshing = false
+    }
+
+    // small helper to refresh
+    fun refreshFromGithub() {
+        scope.launch {
+            isRefreshing = true
+            errorText = null
+            val result = try {
+                withContext(Dispatchers.IO) {
+                    RemoteDataSource.fetchSituations(ctx)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                errorText = e.message ?: "Unknown error"
+                null
+            }
+            if (result != null) {
+                situations = result.data
+                remoteStatus = result.status
+                if (situations.isNotEmpty()) {
+                    selectedCategoryId = situations.first().id
+                } else {
+                    selectedCategoryId = null
+                }
+            }
+            isRefreshing = false
+        }
     }
 
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        // HEADER (no source line)
-        HeaderBar_NoIcon(
+        // HEADER with refresh
+        HeaderBar_NoIcon_WithRefresh(
             showJapanese = showJapanese,
-            onToggle = { showJapanese = it }
+            onToggle = { showJapanese = it },
+            onRefresh = { refreshFromGithub() },
+            isRefreshing = isRefreshing
         )
+
+        // (optional) secondary refresh button
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 4.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            TextButton(onClick = { refreshFromGithub() }) {
+                Text("Refresh from GitHub")
+            }
+            if (errorText != null) {
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = errorText ?: "",
+                    color = Color.Red,
+                    fontSize = 12.sp
+                )
+            }
+        }
 
         // CATEGORY BAR
         CategoryBar(
@@ -73,7 +128,7 @@ fun NihongoLifeScreen() {
             onCategorySelected = { selectedCategoryId = it }
         )
 
-        // MAIN CONTENT
+        // MAIN content
         val selectedSituation = situations.firstOrNull { it.id == selectedCategoryId }
 
         Box(
@@ -87,15 +142,17 @@ fun NihongoLifeScreen() {
             )
         }
 
-        // FOOTER (with source info)
+        // FOOTER with source
         FooterBar_WithSource(remoteStatus)
     }
 }
 
 @Composable
-fun HeaderBar_NoIcon(
+fun HeaderBar_NoIcon_WithRefresh(
     showJapanese: Boolean,
     onToggle: (Boolean) -> Unit,
+    onRefresh: () -> Unit,
+    isRefreshing: Boolean
 ) {
     Row(
         modifier = Modifier
@@ -109,6 +166,15 @@ fun HeaderBar_NoIcon(
             color = Color.White,
             fontSize = 20.sp,
             modifier = Modifier.weight(1f)
+        )
+
+        // refresh text button (since icon drawables crashed earlier)
+        Text(
+            text = if (isRefreshing) "Refreshing..." else "Refresh",
+            color = Color.White,
+            modifier = Modifier
+                .padding(end = 12.dp)
+                .clickable(enabled = !isRefreshing) { onRefresh() }
         )
 
         Row(verticalAlignment = Alignment.CenterVertically) {
