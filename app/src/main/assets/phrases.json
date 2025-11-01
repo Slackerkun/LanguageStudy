@@ -1260,5 +1260,267 @@
         "note": "casual close"
       }
     ]
+  },
+  {
+    "id": "tandema",
+    "title": "TandemA",
+    "phrases": [
+      {
+        "jp": "こんにちは はじめまして",
+        "romaji": "kon nichi wa hajimemashite",
+        "en": "Hello nice to meet you."
+      },
+      {
+        "jp": "きょう は どう ですか？",
+        "romaji": "kyou wa dou desu ka?",
+        "en": "How are you doing today?"
+      },
+      {
+        "jp": "さがみおの に すんで ます",
+        "romaji": "sagamiono ni sunde masu",
+        "en": "I live in Sagamiono."
+      },
+      {
+        "jp": "ここ に きて から ２ねん です",
+        "romaji": "koko ni kite kara ninen desu",
+        "en": "I have been here for two years."
+      },
+      {
+        "jp": "アメリカ の かいしゃ で はたらいて ます",
+        "romaji": "amerika no kaisha de hataraite masu",
+        "en": "I work here in Japan for an American company."
+      },
+      {
+        "jp": "ファイナンス の しごと を して ます",
+        "romaji": "fainansu no shigoto o shite masu",
+        "en": "I work in finance."
+      },
+      {
+        "jp": "かんじ は よめない です",
+        "romaji": "kanji wa yomenai desu",
+        "en": "I cannot read kanji."
+      },
+      {
+        "jp": "ワシントン DC から きました",
+        "romaji": "washinton diishii kara kimashita",
+        "en": "I'm from Washington DC."
+      },
+      {
+        "jp": "にほん が だいすき です",
+        "romaji": "nihon ga daisuki desu",
+        "en": "I really like Japan."
+      },
+      {
+        "jp": "にほん の たべもの が すき です",
+        "romaji": "nihon no tabemono ga suki desu",
+        "en": "I like Japanese food."
+      },
+      {
+        "jp": "まだ にほんご は じょうず じゃない です",
+        "romaji": "mada nihongo wa jouzu janai desu",
+        "en": "My Japanese isn't very good yet."
+      },
+      {
+        "jp": "でも がんばって ます",
+        "romaji": "demo ganbatte masu",
+        "en": "But I'm trying my best!"
+      },
+      {
+        "jp": "まいにち すこしずつ れんしゅう して ます",
+        "romaji": "mainichi sukoshizutsu renshuu shite masu",
+        "en": "I practice a little every day."
+      },
+      {
+        "jp": "にほん の ぶんか に きょうみ が あります",
+        "romaji": "nihon no bunka ni kyoumi ga arimasu",
+        "en": "I'm interested in Japanese culture."
+      },
+      {
+        "jp": "とくに おんせん と たべもの が すき です",
+        "romaji": "tokuni onsen to tabemono ga suki desu",
+        "en": "Especially hot springs and food."
+      },
+      {
+        "jp": "やすみ の ひ は よく サイクリング します",
+        "romaji": "yasumi no hi wa yoku saikuringu shimasu",
+        "en": "On my days off I often go cycling."
+      },
+      {
+        "jp": "アニメ は あまり みない です",
+        "romaji": "anime wa amari minai desu",
+        "en": "I don't watch much anime."
+      },
+      {
+        "jp": "でも えいが は よく みます",
+        "romaji": "demo eiga wa yoku mimasu",
+        "en": "But I often watch movies."
+      },
+      {
+        "jp": "にほん の せいかつ に なれました",
+        "romaji": "nihon no seikatsu ni naremashita",
+        "en": "I'm used to life in Japan now."
+      },
+      {
+        "jp": "ともだち が ふえたら うれしい です",
+        "romaji": "tomodachi ga fuetara ureshii desu",
+        "en": "It would make me happy to have more friends."
+      },
+      {
+        "jp": "にほんご で はなす の は むずかしい けど たのしい です",
+        "romaji": "nihongo de hanasu no wa muzukashii kedo tanoshii desu",
+        "en": "Speaking Japanese is hard but fun."
+      },
+      {
+        "jp": "まち が きれい で すき です",
+        "romaji": "machi ga kirei de suki desu",
+        "en": "I like how clean the cities are."
+      },
+      {
+        "jp": "ときどき じかん が あれば りょこう します",
+        "romaji": "tokidoki jikan ga areba ryokou shimasu",
+        "en": "I travel sometimes when I have time."
+      },
+      {
+        "jp": "にほん の ひと は とても しんせつ です",
+        "romaji": "nihon no hito wa totemo shinsetsu desu",
+        "en": "People in Japan are very kind."
+      },
+      {
+        "jp": "アプリ で はなす の が たのしい です",
+        "romaji": "apuri de hanasu no ga tanoshii desu",
+        "en": "It's fun talking with people on this app."
+      }
+    ]
+  },
+  {
+    "id": "tandemq",
+    "title": "TandemQ",
+    "phrases": [
+      {
+        "jp": "にほん の どこ から きた の？",
+        "romaji": "nihon no doko kara kita no?",
+        "en": "Where are you from in Japan?"
+      },
+      {
+        "jp": "どこ に すんでる の？",
+        "romaji": "doko ni sunderu no?",
+        "en": "Where do you live?"
+      },
+      {
+        "jp": "どの くらい えいご を べんきょう してる の？",
+        "romaji": "dono kurai eigo o benkyou shiteru no?",
+        "en": "How long have you been studying English?"
+      },
+      {
+        "jp": "しゅみ は なに？",
+        "romaji": "shumi wa nani?",
+        "en": "What are your hobbies?"
+      },
+      {
+        "jp": "なん の しごと を してる の？",
+        "romaji": "nan no shigoto o shiteru no?",
+        "en": "What kind of work do you do?"
+      },
+      {
+        "jp": "にほん の どこ が いちばん すき？",
+        "romaji": "nihon no doko ga ichiban suki?",
+        "en": "What place in Japan do you like most?"
+      },
+      {
+        "jp": "やすみ の ひ は なに してる の？",
+        "romaji": "yasumi no hi wa nani shiteru no?",
+        "en": "What do you do on your days off?"
+      },
+      {
+        "jp": "えいが は よく みる？",
+        "romaji": "eiga wa yoku miru?",
+        "en": "Do you often watch movies?"
+      },
+      {
+        "jp": "どんな おんがく が すき？",
+        "romaji": "donna ongaku ga suki?",
+        "en": "What kind of music do you like?"
+      },
+      {
+        "jp": "アニメ は みる？",
+        "romaji": "anime wa miru?",
+        "en": "Do you watch anime?"
+      },
+      {
+        "jp": "すき な たべもの は なに？",
+        "romaji": "suki na tabemono wa nani?",
+        "en": "What's your favorite food?"
+      },
+      {
+        "jp": "すき な のみもの は なに？",
+        "romaji": "suki na nomimono wa nani?",
+        "en": "What's your favorite drink?"
+      },
+      {
+        "jp": "すき な スポーツ は なに？",
+        "romaji": "suki na supootsu wa nani?",
+        "en": "What's your favorite sport?"
+      },
+      {
+        "jp": "どこ に いきたい？",
+        "romaji": "doko ni ikitai?",
+        "en": "Where do you want to go?"
+      },
+      {
+        "jp": "がいこく に いった こと ある？",
+        "romaji": "gaikoku ni itta koto aru?",
+        "en": "Have you ever been abroad?"
+      },
+      {
+        "jp": "えいご の れんしゅう は どの くらい してる？",
+        "romaji": "eigo no renshuu wa dono kurai shiteru?",
+        "en": "How often do you practice English?"
+      },
+      {
+        "jp": "なん の ドラマ が すき？",
+        "romaji": "nan no dorama ga suki?",
+        "en": "What kind of dramas do you like?"
+      },
+      {
+        "jp": "どんな しごと を してみたい？",
+        "romaji": "donna shigoto o shitemitai?",
+        "en": "What kind of job would you like to try?"
+      },
+      {
+        "jp": "どんな ところ に すみたい？",
+        "romaji": "donna tokoro ni sumitai?",
+        "en": "What kind of place do you want to live in?"
+      },
+      {
+        "jp": "ともだち と は よく あう？",
+        "romaji": "tomodachi to wa yoku au?",
+        "en": "Do you often meet your friends?"
+      },
+      {
+        "jp": "インスタ やってる？",
+        "romaji": "insuta yatteru?",
+        "en": "Do you use Instagram?"
+      },
+      {
+        "jp": "LINE してる？",
+        "romaji": "rain shiteru?",
+        "en": "Do you use LINE?"
+      },
+      {
+        "jp": "しゃしん とって も いい？",
+        "romaji": "shashin totte mo ii?",
+        "en": "Can I take a picture?"
+      },
+      {
+        "jp": "また はなそう よ",
+        "romaji": "mata hanasou yo",
+        "en": "Let's talk again!"
+      },
+      {
+        "jp": "つぎ いつ ひま？",
+        "romaji": "tsugi itsu hima?",
+        "en": "When are you free next?"
+      }
+    ]
   }
 ]
